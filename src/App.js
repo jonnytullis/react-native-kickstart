@@ -1,30 +1,44 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { registerRootComponent } from 'expo'
+
+import { Home, Settings } from './views'
 import { useTheme } from './hooks'
 
+const Tab = createBottomTabNavigator()
+
 function App() {
-    const theme = useTheme()
-    const styles = getStyles(theme)
+    const { colors, dark } = useTheme()
+
+    const navigationTheme = {
+        dark,
+        colors: {
+            primary: colors.primary,
+            background: colors.background.primary,
+            card: colors.card.primary,
+            text: colors.text.primary,
+            border: colors.border.primary,
+            notification: colors.notification.primary,
+        },
+    }
 
     return (
-        <View style={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <StatusBar style="auto" />
-        </View>
+        <NavigationContainer theme={navigationTheme}>
+            <Tab.Navigator initialRouteName="Home">
+                <Tab.Screen
+                    name="Home"
+                    component={Home}
+                    options={{ title: 'Home Page' }}
+                />
+                <Tab.Screen
+                    name="TestView"
+                    component={Settings}
+                    options={{ title: 'My Test Page' }}
+                />
+            </Tab.Navigator>
+        </NavigationContainer>
     )
 }
 
 registerRootComponent(App)
-
-function getStyles(theme) {
-    return  StyleSheet.create({
-        container: {
-            flex: 1,
-            backgroundColor: theme.background.primary,
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-    })
-}

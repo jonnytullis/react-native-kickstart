@@ -22,9 +22,13 @@ module.exports = {
     rules: {
         'array-bracket-spacing': [ 'warn', 'always' ],
         'comma-dangle': [ 'error', 'always-multiline' ],
+        'eol-last': [ 'warn', 'always' ],
         'func-call-spacing': [ 'warn', 'never' ],
         indent: [ 'warn', 4 ],
         'max-len': [ 'error', { code: 120 } ],
+        'no-multiple-empty-lines': [ 'warn', { max: 1 } ],
+        'no-multi-spaces': 'warn',
+        'no-trailing-spaces': 'warn',
         'no-unused-vars': 'error',
         'object-curly-spacing': [ 'warn', 'always' ],
         'react/prop-types': 'off',

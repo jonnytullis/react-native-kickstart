@@ -1,6 +1,6 @@
 # React Native Kickstart
-Save hours of configuration by using this kickstart
-template for a React Native project using Expo.
+Save hours of configuration time by using this kickstart template for a
+React Native project (Expo).
 
 ### Run
 * `npm install`

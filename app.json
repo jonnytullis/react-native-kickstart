@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "risk-dice-roller-mobile",
-    "slug": "risk-dice-roller-mobile",
+    "name": "react-native-kickstart",
+    "slug": "react-native-kickstart",
     "version": "1.0.0",
     "orientation": "portrait",
     "entryPoint": "./src/App.js",

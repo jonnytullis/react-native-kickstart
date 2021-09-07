@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { useTheme } from '../hooks'
 
-export default function Settings({ route }) {
+export default function Settings() {
     const theme = useTheme()
     const styles = getStyles(theme)
-    
-    useEffect(() => {
-        console.log('MESSAGE:', route.params?.message)
-    }, [])
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>This is the TEST view!</Text>
-            <Text style={styles.text}>{route.params?.message}</Text>
+            <Text style={styles.text}>This is the SETTINGS screen!</Text>
         </View>
     )
 }

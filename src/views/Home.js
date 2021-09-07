@@ -5,6 +5,7 @@ import { useTheme } from '../hooks'
 export default function Home() {
     const theme = useTheme()
     const styles = getStyles(theme)
+
     return (
         <View style={styles.container}>
             <Text style={styles.text}>This is the HOME screen!</Text>
